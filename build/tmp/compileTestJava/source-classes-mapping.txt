@@ -1,2 +1,0 @@
-org/example/springboot/HelloControllerTest.java
- org.example.springboot.HelloControllerTest

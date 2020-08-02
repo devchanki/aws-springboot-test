@@ -5,14 +5,10 @@ import org.example.springboot.config.auth.LoginUser;
 import org.example.springboot.config.auth.dto.SessionUser;
 import org.example.springboot.service.posts.PostsService;
 import org.example.springboot.web.dto.PostsResponseDto;
-import org.example.springboot.web.dto.PostsUpdateRequestDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,7 +22,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        if(user != null) {
+        if (user != null) {
             model.addAttribute("userName", user.getName());
         }
         System.out.println(user);
@@ -38,7 +34,7 @@ public class IndexController {
         return "posts-save";
     }
 
-//    @PutMapping("/api/v1/posts/{id}")
+    //    @PutMapping("/api/v1/posts/{id}")
 //    public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
 //        return postsService.update(id, requestDto);
 //    }

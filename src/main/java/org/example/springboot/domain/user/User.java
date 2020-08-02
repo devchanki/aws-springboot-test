@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.example.springboot.domain.BaseTimeEntitiy;
 
-
 import javax.persistence.*;
 
 @Getter
